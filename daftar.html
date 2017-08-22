@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html ng-app="nyanHash">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Daftar | Dashboard NyanHash</title>
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<!-- Meta -->
+    <meta name="author" content="NyanHash, Nyan ID">
+    <meta name="keyword" content="cloud mining, legit mining, eth mining, ltc mining, dash mining, cloud mining murah, altcoin mining">
+    <meta name="description" content="Daftar NyanHash - Cloud Mining Pertama di Indonesia">
+    <meta name="robots" content="index,nofollow">
+    <!-- Facebook Meta -->
+	<meta content="Daftar - NyanHash" property="og:title">
+	<meta content="website" property="og:type">
+	<meta content="Halaman Daftar NyanHash - Cloud Mining pertama di Indonesia" property="og:description">
+	<meta content="https://my.nyanhash.web.id/login.html" property="og:url">
+
+    <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="/plugins/toastr/toastr.min.css">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+	<style>
+		@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+		* {
+			font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		}
+		
+		.form-group.has-error input {
+			border: 1px solid #F44336;
+		}
+
+		input[type=text],
+		input[type=email],
+		input[type=password] {
+			outline: none;
+			display: block;
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #999;
+		}
+		input[type=text]:focus,
+		input[type=email]:focus,
+		input[type=password]:focus {
+			outline: none;
+			border: 1px solid #333;
+		}
+		button {
+			outline: none;
+			border: 1px solid #2672ec;
+			color: #FFF;
+			padding: 8px 16px;
+			background-color: #2672ec;
+		}
+		button.outline {
+			background-color: white;
+			color: #2672ec;
+		}
+		.form {
+			padding: 2em 10em 0 3em;
+		}
+		.blue-bg {
+			background: #FFB75E;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+		}
+		.text-blue {
+			color: #2672ec;
+		}
+		.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#29d;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}.pace .pace-progress-inner{display:block;position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #29d,0 0 5px #29d;opacity:1;-webkit-transform:rotate(3deg) translate(0,-4px);-moz-transform:rotate(3deg) translate(0,-4px);-ms-transform:rotate(3deg) translate(0,-4px);-o-transform:rotate(3deg) translate(0,-4px);transform:rotate(3deg) translate(0,-4px)}.pace .pace-activity{display:block;position:fixed;z-index:2000;top:15px;right:15px;width:14px;height:14px;border:2px solid transparent;border-top-color:#29d;border-left-color:#29d;border-radius:10px;-webkit-animation:pace-spinner .4s linear infinite;-moz-animation:pace-spinner .4s linear infinite;-ms-animation:pace-spinner .4s linear infinite;-o-animation:pace-spinner .4s linear infinite;animation:pace-spinner .4s linear infinite}@-webkit-keyframes pace-spinner{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-moz-keyframes pace-spinner{0%{-moz-transform:rotate(0);transform:rotate(0)}100%{-moz-transform:rotate(360deg);transform:rotate(360deg)}}@-o-keyframes pace-spinner{0%{-o-transform:rotate(0);transform:rotate(0)}100%{-o-transform:rotate(360deg);transform:rotate(360deg)}}@-ms-keyframes pace-spinner{0%{-ms-transform:rotate(0);transform:rotate(0)}100%{-ms-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes pace-spinner{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+		@media (max-width: 768px) {
+			.blue-bg {
+				height: 100px !important;
+			}
+			.form {
+				padding: 0 !important;
+			}
+		}
+	</style>
+</head>
+<body class="hold-transition" ng-controller="registCtrl">
+	
+	<div style="height: 100vh;">
+		<div class="col-md-7 blue-bg" style="height: 100%;color: #FFF;background: url('/static/img/cloud-mining.jpg') center/cover no-repeat;">
+		</div>
+		<div class="col-md-5" style="height: 100%;">
+			<form ng-submit="doRegist()" class="form">
+				<h2 style="color: #F44336;">Daftar</h2>
+				<span>Create Account and Join With Us</span>
+				<br><br><br>
+				<div class="form-group">
+					<input type="text" ng-model="user.name" required placeholder="Full Name">
+				</div>
+				<div class="form-group">
+					<input type="text" ng-model="user.username" required placeholder="Username">
+				</div>
+				<div class="form-group">
+					<input type="email" ng-model="user.email" required placeholder="Email">
+				</div>
+				<div class="form-group">
+					<input type="password" ng-model="user.password" required placeholder="Password">
+				</div>
+				<div class="form-group" ng-class="{'has-error': isError}">
+					<input type="password" ng-model="user.confirmPassword" required placeholder="Confirm Password">
+				</div>
+				<div class="form-group">
+					<label><input ng-model="accept" type="checkbox"> Saya setuju dengan ketentuan yang berlaku.</label>
+				</div>
+				<button class="button">Daftar</button>
+				<button ng-click="jumpToLogin()" class="button outline">Masuk Sekarang</button>
+
+				<div style="height: 6em;"></div>
+				<div class="row">
+					<div class="col-md-12">
+						<h3 style="margin: 0;" class="text-blue"><i class="fa fa-btc"></i> Nyan<b>Hash</b></h3>
+						<span>Copyright &copy; 2017 NyanHash, Nyan ID</span>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Angular -->
+	<script src="/plugins/angular/angular.min.js"></script>
+	<script src="/plugins/angular/angular-route.min.js"></script>
+	<script src="/plugins/angular/angular-cookies.min.js"></script>
+	<!-- jQuery 2.2.3 -->
+	<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
+	<!-- Bootstrap 3.3.6 -->
+	<script src="/bootstrap/js/bootstrap.min.js"></script>
+	<!-- PACE -->
+	<script async data-pace-options='{ "ajax": true }' src="/plugins/pace/pace.min.js"></script>
+	<script async src='https://www.google.com/recaptcha/api.js'></script>
+	<script async src="/plugins/toastr/toastr.min.js"></script>
+	<script async src="/plugins/cryptojs/crypto.js"></script>
+	<script src="/static/js/app.module.js"></script>
+</body>
+</html>

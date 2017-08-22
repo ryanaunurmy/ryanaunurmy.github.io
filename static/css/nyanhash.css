@@ -1,0 +1,143 @@
+.content-wrapper {
+	background-color: #f1f1f1;
+}
+.alert-info-custom {
+	color: #31708f !important;
+    background-color: #d9edf7 !important;
+    border-color: #bce8f1;
+}
+.panel-footer--child {
+	padding: 8px 0;
+    font-size: 19px;
+}
+.bg-red-gradient-custom {
+	background: #B24592;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F15F79, #B24592);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F15F79, #B24592); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #FFF;
+}
+.btn-transparent {
+	background-color: rgba(0, 0, 0, 0.15);
+    color: #FFF;
+}
+.shadow {
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+}
+.btn-nyanhash {
+	background: #FFF;
+	border: none;
+	border-radius: 2px;
+	color: #FFF;
+	position: relative;
+	height: 36px;
+	margin: 0;
+	min-width: 64px;
+	padding: 0 16px;
+	display: inline-block;
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	line-height: 1;
+	letter-spacing: 0;
+	overflow: hidden;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	box-sizing: border-box;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+	line-height: 36px;
+	vertical-align: middle;
+	width: 100%;
+}
+.btn-nyanhash:hover {
+	color: #FFF;
+}
+
+.buy-item h3 {
+	font-weight: bold;
+    margin-bottom: 0; }
+.buy-item small {
+	font-size: 15px; }
+.buy-item h1 {
+	margin-bottom: 0.5em; }
+.buy-item h2,
+.buy-item .input-group {
+	margin: 0.3em 1em;
+    padding: 0.3em 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+}
+.buy-item .input {
+	outline: none;
+	border: none;
+}
+.buy-item ul {
+	list-style: none;
+	color: #8e8888;
+}
+
+.paid-status {
+	font-weight: bold;
+	color: #333;
+	padding: 8px;
+	font-size: 28px;
+}
+.paid-status.paid {
+	border: 2px solid #4CAF50;
+	color: #4CAF50;
+}
+.paid-status.unpaid {
+	border: 2px solid #F44336;
+}
+
+.table.table-bordered {
+
+}
+.table.table-bordered thead {
+	text-align: center;
+}
+.table.table-bordered .bg-whitesmoke {
+	background-color: #ececec;
+}
+
+.steps {
+	list-style: none;
+	padding: 0;
+	background-color: #f39c12;
+}
+.steps .step {
+	display: inline-block;
+	padding: 16px;
+	background-color: #f39c12;
+	color: #FFF;
+	text-align: left;
+	width: calc((100% - 16px) / 3);
+}
+.steps .step.active {
+	background-color: #ea9206;
+}
+.steps .step .step-number {
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 50%;
+	margin-right: 8px;
+	border: 1px solid #FFF;
+}
+
+.table-juara tr:nth-child(1) td {
+	font-size: 20px;
+	font-weight: 600;
+}
+.table-juara tr:nth-child(2) td {
+	font-size: 18px;
+	font-weight: 600;
+}
+.table-juara tr:nth-child(3) td {
+	font-size: 16px;
+	font-weight: 600;
+}
