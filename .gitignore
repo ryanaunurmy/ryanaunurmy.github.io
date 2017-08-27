@@ -17,6 +17,7 @@ temp_server.js
 pages/*
 !pages/.*html
 build/
+source/
 README.md
 yarn.lock
 Gruntfile.js
