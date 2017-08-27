@@ -20,6 +20,7 @@ pages/examples/
 pages/forms/
 pages/mailbox/
 pages/tables/
+pages/layout/
 build/
 source/
 README.md
