@@ -14,8 +14,12 @@ test.js
 server.js
 mail.html
 temp_server.js
-pages/*
-!pages/.*html
+pages/UI/
+pages/charts/
+pages/examples/
+pages/forms/
+pages/mailbox/
+pages/tables/
 build/
 source/
 README.md

@@ -1,0 +1,99 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		Account Settings
+	</h1>
+</section>
+
+ <!-- Main content -->
+<section class="content clearfix">
+	<div class="alert alert-info alert-info-custom alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		 <h4>Informasi</h4>
+		 <p>Karena Withdrawal di lakukkan secara Otomatis maka pastikan Alamat Wallet kalian sudah benar, ya miners</p>
+	</div>
+	<div class="row">
+	<section class="col-md-6 clearfix">
+		<div class="box box-solid shadow">
+			<div class="box-header">
+				<h3><i class="fa fa-id-card-o fa-2x"></i> Profil</h3>
+			</div>
+			<div class="box-body">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label for="" class="col-md-4 control-label">Nama Lengkap</label>
+						<div class="col-md-8">
+							<input type="text" ng-model="users.name" name="nama-lengkap" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 control-label">Email</label>
+						<div class="col-md-8">
+							<input type="email" ng-model="users.email" name="email" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 control-label">Alamat Ethereum</label>
+						<div class="col-md-8">
+							<input type="text" ng-model="users.address.eth" name="bitcoin-address" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 control-label">Alamat Litecoin</label>
+						<div class="col-md-8">
+							<input type="text" ng-model="users.address.ltc" name="bitcoin-address" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 control-label">Alamat Dash</label>
+						<div class="col-md-8">
+							<input type="text" ng-model="users.address.dsh" name="bitcoin-address" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-4"></div>
+						<div class="col-md-8">
+							<button ng-click="saveUsers()" class="btn btn-success">Simpan Perubahan</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="col-md-6 clearfix">
+		<div class="box box-solid shadow">
+			<div class="box-header">
+				<h3>Login</h3>
+			</div>
+			<div class="box-body">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label for="" class="col-md-4 control-label">Password Sekarang</label>
+						<div class="col-md-8">
+							<input type="password" ng-model="password.old" name="old-password" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-md-4 control-label">Password Baru</label>
+						<div class="col-md-8">
+							<input type="password" ng-model="password.new" name="new-password" class="form-control">
+						</div>
+					</div>
+					<div class="form-group" ng-class="{'has-error': error}">
+						<label for="" class="col-md-4 control-label">Konfirmasi Password Baru</label>
+						<div class="col-md-8">
+							<input type="password" ng-model="password.newConfirm" name="new-confirm-password" class="form-control ">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-4"></div>
+						<div class="col-md-8">
+							<button ng-click="savePassword()" class="btn btn-success">Simpan Perubahan</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</div>
+</section>

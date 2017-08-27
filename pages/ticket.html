@@ -1,0 +1,67 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		Ticket {{ ticketId }}
+	</h1>
+</section>
+
+ <!-- Main content -->
+<section class="content clearfix">
+	<section class="col-lg-4">
+		<div class="box box-solid shadow">
+			<div class="box-header bg-green">
+				<h4>Ticket Detail</h4>
+			</div>
+			<div class="box-body">
+				<table class="table table-striped">
+					<tbody>
+						<tr>
+							<td>Pengirim</td>
+							<td>{{ starter.name }}</td>
+						</tr>
+						<tr>
+							<td>Ticket ID</td>
+							<td>{{ starter.ticketId }}</td>
+						</tr>
+						<tr>
+							<td>Subject</td>
+							<td>{{ starter.subject }}</td>
+						</tr>
+						<tr>
+							<td>Tanggal Kirim</td>
+							<td>{{ starter.date }}</td>
+						</tr>
+						<tr>
+							<td>Status</td>
+							<td><label for="" class="label label-success">{{ starter.status }}</label></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<section class="col-lg-8">
+		<div class="box box-solid shadow" ng-repeat="reply in replys">
+			<div class="box-header" ng-class="{'bg-red': isStater(reply), 'bg-blue': isAdmin(reply)}">
+				<h4>{{ reply.name }} #{{ reply.subject }}</h4>
+				<span><i class="fa fa-calendar-o"></i> {{ reply.date }}</span>
+			</div>
+			<div class="box-body">
+				<p>{{ reply.message | atob }}</p>
+			</div>
+		</div>
+		<div class="box box-solid shadow">
+			<div class="box-header bg-blue">
+				<h4>Reply</h4>
+			</div>
+			<div class="box-body">
+				<div class="form-group">
+					<textarea id="reply-textbox" ng-model="message" ng-disabled="isClosed()" name="" id="" style="height: 150px" class="form-control" placeholder="Tulis pesan disini"></textarea>
+				</div>
+			</div>
+			<div class="box-footer">
+				<button ng-click="replyTicket()" class="btn bg-default pull-right">Submit</button>
+			</div>
+		</div>
+	</section>
+</section>

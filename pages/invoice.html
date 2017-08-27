@@ -1,0 +1,188 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		Proses
+	</h1>
+</section>
+<style>
+.content-wrapper {
+	background-color: #FFF;
+}
+</style>
+ <!-- Main content -->
+<section class="content">
+	<div class="">
+		<ul class="steps no-margin">
+			<li class="step">
+				<span class="step-number">1</span><span class="step-title">Mining</span>
+			</li>
+			<li class="step">
+				<span class="step-number">2</span><span class="step-title">Review dan Checkout</span>
+			</li>
+			<li class="step active">
+				<span class="step-number">3</span><span class="step-title">Pembayaran</span>
+			</li>
+		</ul>	
+	</div>
+	<br>
+	<section id="incoice-redirect" ng-hide="isDone">
+		<div class="box box-solid shadow">
+			<div style="padding: 16px;display: inline-block;">
+				<h3><b>Getting Invoice #Information</b></h3>
+				<p>Loading..</p>
+			</div>
+			<div class="pull-right" style="margin-top: 10px;">
+				<img src="/static/img/loading.gif" alt="Loading" width="100px" height="100px">
+			</div>
+		</div>
+	</section>
+	<section id="invoice-detail" ng-show="isDone">
+		<section class="head-section clearfix" ng-show="isBankMethod">
+			<div class="col-md-1"></div>
+			<div class="col-md-4 text-center">
+				<h2>Nyan<b>Hash</b></h2>
+				<div ng-repeat="rekening in rekenings">
+					<h3>{{ rekening.no }}</h3>
+					<h5>{{ rekening.bank }}, A.n. {{ rekening.an }}</h5>
+				</div>
+			</div>
+			<div class="col-md-4 col-md-push-3 clearfix text-right">
+				<span class="paid-status unpaid">UNPAID</span>
+				<h3>Invoice #{{ id }}</h3>
+
+				<p class="no-margin">Silahkan tranfer ke</p>
+				<p class="no-margin">Rekening kami</p>
+				<p class="no-margin">Mohon tulisakan berita: <b>INVOICE-{{ id }}</b></p>
+				<p class="no-margin">pada kolom berita transfer.</p>
+				<br>
+				<p><b>Best Regards, NyanHash</b></p>
+				</div>
+		</section>
+		<section class="head-section clearfix" ng-show="isCoinMethod">
+			<div class="col-md-1"></div>
+			<div class="col-md-4 text-center">
+				<h2>Nyan<b>Hash</b></h2>
+				<div>
+					<h3>{{ deposit }}</h3>
+					<h5>Address</h5>
+				</div>
+			</div>
+			<div class="col-md-4 col-md-push-3 clearfix text-right">
+				<span class="paid-status unpaid">UNPAID</span>
+				<h3>Invoice #{{ id }}</h3>
+
+				<p class="no-margin">Silahkan tranfer ke</p>
+				<p class="no-margin">Alamat di sebelah kiri tersebut.</p>
+				<p class="no-margin">banyak nya sesuai dengan kolom Total di bawah.</p>
+				<br>
+				<p><b>Best Regards, NyanHash</b></p>
+				</div>
+		</section>
+		<section class="body-section clearfix">
+			<div class="clearfix" style="padding: 1em 0;">
+				<div class="col-sm-4 invoice-col">
+					From
+					<address>
+					<strong>NyanHash, Nyan ID</strong><br>
+					Jombang, Jawa Timur, Indonesia<br>
+					Phone: (804) 123-5432<br>
+					Email: care@nyanhash.web.id<br>
+					Website: https://nyanhash.web.id
+					</address>
+				</div>
+				<div class="col-sm-4 invoice-col">
+					Invoiced To
+					<address>
+					<strong>{{ user.name }}</strong><br>
+					Email: {{ user.email }}
+					</address>
+				</div>
+				<div class="col-sm-4">
+					<b>Invoice #{{ id }}</b><br>
+					<br>
+					<b>Payment Due:</b> {{ today }}<br>
+					<b>Account:</b> {{ user.id }}
+				</div>
+			</div>
+			<div class="box box-solid shadow" style="">
+				<div class="box-body">
+					<table class="table table-bordered table-hover">
+						<thead class="bg-whitesmoke">
+							<th>Description</th>
+							<th>Total</th>
+						</thead>
+						<tr>
+							<td>
+								Shared Server - {{ buy.title }}@{{ buy.coin | uppercase}} ({{ expires }})
+							</td>
+							<td>
+								{{ harga }}
+							</td>
+						</tr>
+						<tr ng-show="isBankMethod">
+							<td>
+								Fee Transfer + Pembelian Bitcoin <sup><a href="#">Apa itu Fee Transfer?</a></sup>
+							</td>
+							<td>
+								{{ fee }}
+							</td>
+						</tr>
+						<tr class="bg-whitesmoke">
+							<td>
+								Total
+							</td>
+							<td>
+								<b>{{ total }}</b>
+							</td>
+						</tr>
+					</table>
+
+					<p style="margin-top: 1em;">*nb. Simpan invoice dalam bentuk PDF dengan menekan CTRL+P dari Browser kamu dan Print.</p>
+				</div>
+			</div>
+			<div class="box box-solid shadow" style="margin-top: 2em;">
+				<div class="box-header bg-green">
+					<h3>Prosess Pembayaran NyanHash</h3>
+				</div>
+				<div class="box-body no-padding">
+					<table class="table table-hover">
+						<thead class="bg-whitesmoke">
+							<th>Step</th>
+							<th>Description</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>
+									<p>Pilih metode pembayaran yang anda inginkan, saat ini NyanHash tersedia dengan metode pembayaran Bitcoin dan ATM.</p>
+								</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>
+									<p>Silahkan kirim uang sebesar yang tertera pada Invoice Detail anda.</p>
+								</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>
+									<p>Kirim bukti Transfer anda ke email kami di info@nyanhash.web.id, dengan format nama lengkap, alamat, no. Rekening, Atas Nama, Nominal tranfer dan Foto bukti Transfer. </p>
+
+									<p>Untuk pembayaran lewat Bitcoin anda hanya mengisi format nama lengkap, alamat, nominal tranfer dan Bitcoin <b>txid</b>. </p>
+								</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>
+									<p>Karena prosess pemesanan dilakukkan secara manual harap tunggu paling lama 2x24 Jam. </p>
+									
+									<p>Jika pesanan tidak muncul lebih dari 2x24 Jam maka hubungi biling@nyanhash.web.id dengan subject <b>"Pending #{{ id }}"</b></p>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</section>
+</section>

@@ -1,0 +1,103 @@
+<!-- Content Header (Page header) -->
+<style>
+	.title-buy {
+		margin-bottom: 10px;
+	}
+	.title-buy h3 {
+		display: inline-block;
+	}
+	.title-buy select {
+		margin-top: 20px;
+	}
+</style>
+<section class="content-header">
+	
+</section>
+
+ <!-- Main content -->
+<section class="content">
+	<div class="">
+		<ul class="steps no-margin">
+			<li class="step active">
+				<span class="step-number">1</span><span class="step-title">Mining</span>
+			</li>
+			<li class="step">
+				<span class="step-number">2</span><span class="step-title">Review dan Checkout</span>
+			</li>
+			<li class="step">
+				<span class="step-number">3</span><span class="step-title">Pembayaran</span>
+			</li>
+		</ul>	
+	</div>
+	<br>
+	<div class="alert alert-info alert-info-custom alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h4>Informasi</h4>
+		<p>Sekedar info nih miners! karena kami menggunakan Shared Server maka, ada bonus profit dari kami. Jadi pastikan selalu cek di history profit kalian ya.</p>
+		<br>
+		<p>Kami memiliki fee lebih kecil dari pada Cloud Mining yang lain loh miners!</p>
+	</div>
+	<div class="title-buy">
+		<h3><i class="fa fa-server"></i> Shared Server</h2>
+		<div class="pull-right">
+			<select name="" ng-model="coin" id="" class="form-control">
+				<option value="eth">ETH</option>
+				<option value="ltc">LTC</option>
+				<option value="dsh">DASH</option>
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 col-md-4" ng-repeat="harga in hargas.shared">
+			<div class="box box-solid shadow">
+				<div class="box-body">
+					<div class="text-center buy-item">
+						<h3>{{ harga.title }}</h3>
+						<small>{{ harga.caption }}</small>
+						<h1>$ {{ harga.harga }}</h1>
+						<h2 class="text-yellow" >{{ harga.hashrate }} GH/s</h2>
+						<ul class="no-padding">
+							<li ng-repeat="list in harga.keterangan">{{list}}</li>
+						</ul>
+					</div>
+				</div>
+				<div class="box-footer text-black text-center">
+					<button ng-click="doProsess(harga.hashrate, harga.title)" class="btn-nyanhash bg-yellow-gradient">BELI</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-3 col-md-4">
+			<div class="box box-solid shadow">
+				<div class="box-body">
+					<div class="text-center buy-item">
+						<h3>Custom</h3>
+						<small>Custom Mining</small>
+						<h1>$ {{ custom.harga() }}</h1>
+						<div class="input-group" style="padding: 0.7em 1em;width: calc(100% - 24px);">
+							<select class="form-control" ng-model="custom.hashrate" name="" id="">
+								<option value="5">5 GH/s</option>
+								<option value="10">10 GH/s</option>
+								<option value="15">15 GH/s</option>
+								<option value="20">20 GH/s</option>
+								<option value="50">50 GH/s</option>
+								<option value="100">100 GH/s</option>
+								<option value="150">150 GH/s</option>
+								<option value="200">200 GH/s</option>
+								<option value="500">500 GH/s</option>
+							</select>
+						</div>
+						<ul class="no-padding">
+							<li>5 Year</li>
+							<li>Dikenakan biaya maintence</li>
+						</ul>
+					</div>
+				</div>
+				<div class="box-footer text-black text-center">
+					<button ng-click="doProsess(custom.hashrate, 'Custom')" class="btn-nyanhash bg-yellow-gradient">BELI</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</section>

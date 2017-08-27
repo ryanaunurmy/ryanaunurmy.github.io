@@ -1,0 +1,180 @@
+<!-- Content Header (Page header) -->
+<style>
+	.bolder {
+		font-weight: bold;
+	}
+	.row {
+		margin-left: -8px;
+		margin-right: -8px;
+	}
+	.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+</style>
+ <section class="content-header">
+	<h1>
+		Dashboard
+		<small>Control panel</small>
+	</h1>
+ </section>
+
+ <!-- Main content -->
+ <section class="content">
+ 	<section class="clearfix" ng-show="dashboard.func.isAlertAvailable">
+		<div class="alert alert-dismissible" ng-show="alert.show" ng-class="alert.class" ng-repeat="alert in dashboard.alerts">
+			 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+			 <h4><i class="icon fa fa-info"></i> {{ alert.subject }}</h4>
+			 <p>{{ alert.text }}</p>
+		 </div>
+	</section>
+	<!-- Small boxes (Stat box) -->
+	<section class="clearfix" ng-repeat="contract in dashboard.contract">
+		<h3 class="active"><i class="fa fa-server"></i> {{ contract.coin }} - Shared Server</h2>
+		<div class="row">
+		<div class="row col-lg-8">
+			<div class="col-lg-6 col-xs-12">
+				<div class="small-box bg-aqua">
+					<div class="inner">
+						<h3>{{ dashboard.profit.today[contract.initial] | toFixed }} {{ contract.initial | uppercase }}</h3>
+
+						<p>Earning Today</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-line-chart"></i>
+					</div>
+					<a href="#/p/history" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-6 col-xs-12">
+				<div class="small-box bg-red">
+					<div class="inner">
+						<h3>{{ contract.hashrate }} GH/s</h3>
+
+						<p>Hashrate</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-bolt"></i>
+					</div>
+					<a href="#/p/history" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+
+			<div class="col-lg-6 col-xs-12">
+				<div class="small-box bg-green">
+					<div class="inner">
+						<h3>{{ dashboard.profit.total[contract.initial] | toFixed }} {{ contract.initial | uppercase}}</h3>
+
+						<p>Total Earnings</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-usd"></i>
+					</div>
+					<a href="#/p/history" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-6 col-xs-12">
+				<div class="small-box bg-yellow">
+					<div class="inner">
+						<h3>{{ dashboard.lastPrice[contract.initial] }}</h3>
+
+						<p>{{ contract.coin }} Last Price Today</p>
+					</div>
+					<div class="icon">
+						<i class="fa fa-usd"></i>
+					</div>
+					<a href="https://coinmarketcap.com/all/views/all/#IDR" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-xs-12">
+			<div class="box box-solid shadow">
+				<div class="box-header bg-blue">
+					<h4>Earning Detail</h4>
+				</div>
+				<div class="box-body no-padding" style="margin-bottom: 12px;">
+					<table class="table table-striped">
+						<tr>
+							<td>{{ dashboard.func.predic('d', contract.initial) }} {{ contract.initial | uppercase }}</td>
+							<td>
+								<div class="pull-right">
+									<label for="" class="label label-warning">1d</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>{{ dashboard.func.predic('w', contract.initial) }} {{ contract.initial | uppercase }}</td>
+							<td>
+								<div class="pull-right">
+									<label for="" class="label label-info">1w</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>{{ dashboard.func.predic('m', contract.initial) }} {{ contract.initial | uppercase }}</td>
+							<td>
+								<div class="pull-right">
+									<label for="" class="label label-success">1m</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>{{ dashboard.func.predic('y', contract.initial) }} {{ contract.initial | uppercase }}</td>
+							<td>
+								<div class="pull-right">
+									<label for="" class="label label-danger">1y</label>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="box-footer">
+					<button class="btn btn-default" data-toggle="modal" data-target="#withdrawalModal">Request Penarikan</button>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+	<!-- /.row -->
+</section>
+
+<div id="withdrawalModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="withdrawal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="withdrawal">Withdrawals</h4>
+			</div>
+			<div class="modal-body">
+				<h4>Sesuai dengan Ketentuan Kami</h4>
+				<p>Withdrawal (Penarikan) dilakukkan secara otomatis jika Total Earning sudah mencapai batas minimum Withdrawal kami, Maka dari itu pastikan anda sudah memasukkan alamat Wallet di halaman <strong>Setting</strong>.</p> 
+				<p>Detail withdrawal akan di tampilkan di halaman <strong>History</strong>.</p>
+				<h4>Berikut adalah Daftar rincian Withdrawal Setiap Cryptocurrency</h4>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Coin</th>
+							<th>Minimum</th>
+							<th>Fee</th>
+						</tr>
+					</thead>
+					<tr>
+						<td>Ethereum</td>
+						<td>0.1 ETH</td>
+						<td>0.005 ETH</td>
+					</tr>
+					<tr>
+						<td>Litecoin</td>
+						<td>0.1 LTC</td>
+						<td>0.002 LTC</td>
+					</tr>
+					<tr>
+						<td>Dash</td>
+						<td>0.1 DASH</td>
+						<td>0.002 DASH</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
