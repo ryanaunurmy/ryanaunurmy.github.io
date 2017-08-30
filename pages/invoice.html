@@ -47,7 +47,7 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-md-push-3 clearfix text-right">
-				<span class="paid-status unpaid">UNPAID</span>
+				<span class="paid-status" ng-class="status">{{ status | uppercase }}</span>
 				<h3>Invoice #{{ id }}</h3>
 
 				<p class="no-margin">Silahkan tranfer ke</p>
@@ -68,11 +68,11 @@
 				</div>
 			</div>
 			<div class="col-md-4 col-md-push-3 clearfix text-right">
-				<span class="paid-status unpaid">UNPAID</span>
+				<span class="paid-status" ng-class="status">{{ status | uppercase }}</span>
 				<h3>Invoice #{{ id }}</h3>
 
 				<p class="no-margin">Silahkan tranfer ke</p>
-				<p class="no-margin">Alamat di sebelah kiri tersebut.</p>
+				<p class="no-margin">Alamat Wallet kami di {{ deposit }}</p>
 				<p class="no-margin">banyak nya sesuai dengan kolom Total di bawah.</p>
 				<br>
 				<p><b>Best Regards, NyanHash</b></p>
@@ -85,7 +85,6 @@
 					<address>
 					<strong>NyanHash, Nyan ID</strong><br>
 					Jombang, Jawa Timur, Indonesia<br>
-					Phone: (804) 123-5432<br>
 					Email: care@nyanhash.web.id<br>
 					Website: https://nyanhash.web.id
 					</address>

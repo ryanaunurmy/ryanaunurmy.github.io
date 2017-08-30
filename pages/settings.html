@@ -35,19 +35,28 @@
 					<div class="form-group">
 						<label for="" class="col-md-4 control-label">Alamat Ethereum</label>
 						<div class="col-md-8">
-							<input type="text" ng-model="users.address.eth" name="bitcoin-address" class="form-control">
+							<input type="text" ng-model="users.address.eth" name="ethereum-address" class="form-control">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="" class="col-md-4 control-label">Alamat Litecoin</label>
 						<div class="col-md-8">
-							<input type="text" ng-model="users.address.ltc" name="bitcoin-address" class="form-control">
+							<input type="text" ng-model="users.address.ltc" name="litecoin-address" class="form-control">
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="" class="col-md-4 control-label">Alamat Dash</label>
 						<div class="col-md-8">
-							<input type="text" ng-model="users.address.dsh" name="bitcoin-address" class="form-control">
+							<input type="text" ng-model="users.address.dsh" name="dash-address" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="security-id" class="col-md-4 control-label">Security</label>
+						<div class="col-md-8">
+							<select id="security-id" ng-model="users.security" class="form-control">
+								<option value="2fa">2FA (Rekomendasi)</option>
+								<option value="none">No Security</option>
+							</select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -97,3 +106,25 @@
 	</section>
 	</div>
 </section>
+
+<div id="confirm2fa" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="konfirmasi" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title text-blue" id="konfirmasi">Konfirmasi Kode 2FA</h4>
+			</div>
+			<div class="modal-body">
+				<p>Dikarenakan anda menggunakan Security 2FA, maka anda harus memasukkan Kode 2FA yang sudah kami kirim ke Email anda. Ini di lakukkan untuk mencegah hal yang tidak di inginkan.</p>
+				<div class="form-group">
+					<label for="" class="text-right">Kode 2FA</label>
+					<input type="number" ng-model="code" class="form-control" maxlength="6">
+				</div>
+				<p class="text-blue">Tidak mendapatkan email? <span style="cursor: pointer;font-weight: bold;">Kirim Ulang.</span></p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn btn-default" ng-click="confirm()">Konfirmasi</button>
+			</div>
+		</div>
+	</div>
+</div>

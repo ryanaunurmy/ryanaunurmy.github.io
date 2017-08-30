@@ -92,6 +92,9 @@
 .paid-status.unpaid {
 	border: 2px solid #F44336;
 }
+.paid-status.expired {
+	border: 2px solid #F44336;
+}
 
 .table.table-bordered {
 
@@ -141,3 +144,16 @@
 	font-size: 16px;
 	font-weight: 600;
 }
+
+@media only screen and (max-width: 680px) {
+	.steps .step {
+		display: block !important;
+		width: 100% !important;
+	}
+	.dataTables_wrapper {
+		overflow: hidden;
+	}
+	.dataTables_wrapper .row > div {
+		overflow-x: auto;
+	}
+}	
