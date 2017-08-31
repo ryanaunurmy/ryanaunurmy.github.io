@@ -132,6 +132,12 @@
 	border: 1px solid #FFF;
 }
 
+.table-juara tr td:nth-child(2) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+}
 .table-juara tr:nth-child(1) td {
 	font-size: 20px;
 	font-weight: 600;
