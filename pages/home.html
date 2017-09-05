@@ -24,7 +24,7 @@
 		<div class="alert alert-dismissible" ng-show="alert.show" ng-class="alert.class" ng-repeat="alert in dashboard.alerts">
 			 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 			 <h4><i class="icon fa fa-info"></i> {{ alert.subject }}</h4>
-			 <p>{{ alert.text }}</p>
+			 <p style="white-space: pre-wrap;">{{ alert.text }}</p>
 			 <br>
 			 <b>Best Regards, <br>NyanHash Indonesia</b>
 		 </div>
