@@ -162,4 +162,7 @@
 	.dataTables_wrapper .row > div {
 		overflow-x: auto;
 	}
+	.tujuan h3 {
+		font-size: 130%;
+	}
 }	
