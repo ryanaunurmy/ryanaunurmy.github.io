@@ -112,7 +112,7 @@
 						</thead>
 						<tr>
 							<td>
-								Shared Server - {{ buy.title }}@{{ buy.coin | uppercase}} ({{ expires }})
+								{{ buy.title }}@{{ buy.coin | uppercase}} ({{ expires }})
 							</td>
 							<td>
 								{{ harga }}
@@ -120,7 +120,7 @@
 						</tr>
 						<tr ng-show="isBankMethod">
 							<td>
-								Fee Transfer + Pembelian Bitcoin <sup><a href="#">Apa itu Fee Transfer?</a></sup>
+								Fee Transfer + Pembelian Bitcoin <sup><a href="https://nyanhash.web.id/faq.html">Apa itu Fee Transfer?</a></sup>
 							</td>
 							<td>
 								{{ fee }}
@@ -165,7 +165,7 @@
 							<tr>
 								<td>3</td>
 								<td>
-									<p>Kirim bukti Transfer anda ke email kami di info@nyanhash.web.id, dengan format nama lengkap, alamat, no. Rekening, Atas Nama, Nominal tranfer dan Foto bukti Transfer. </p>
+									<p>Kirim bukti Transfer anda ke email kami di info@nyanhash.web.id, dengan format nama lengkap, alamat, no. Rekening, Atas Nama, Nominal tranfer, Nama Bank dan Foto bukti Transfer. </p>
 
 									<p>Untuk pembayaran lewat Bitcoin anda hanya mengisi format nama lengkap, alamat, nominal tranfer dan Bitcoin <b>txid</b>. </p>
 								</td>
@@ -176,6 +176,7 @@
 									<p>Karena prosess pemesanan dilakukkan secara manual harap tunggu paling lama 2x24 Jam. </p>
 									
 									<p>Jika pesanan tidak muncul lebih dari 2x24 Jam maka hubungi biling@nyanhash.web.id dengan subject <b>"Pending #{{ id }}"</b></p>
+									<p>Gunakan Hashtag (#) "BANK_MANDIRI", "BANK_BRI_SYARIAH", dan "BITCOIN" sesuai dengan metode pembayaran yang anda lakukkan di bagian bawah Email anda.</p>
 								</td>
 							</tr>
 						</tbody>

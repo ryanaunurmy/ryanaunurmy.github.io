@@ -96,6 +96,9 @@
 			}
 		}
 	</style>
+	<script>
+		var _0xc180=["\x69\x73\x4C\x6F\x67\x69\x6E","\x69\x6E\x64\x65\x78\x4F\x66","\x63\x6F\x6F\x6B\x69\x65","\x68\x72\x65\x66","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x2F"];if(decodeURIComponent(document[_0xc180[2]])[_0xc180[1]](btoa(_0xc180[0]))!=  -1){document[_0xc180[4]][_0xc180[3]]= _0xc180[5]}
+	</script>
 </head>
 <body class="hold-transition" ng-controller="loginCtrl">
   
@@ -129,7 +132,7 @@
 		<div class="next" ng-hide="loginForm">
 			<form class="form" ng-submit="doConfirm()">
 				<h2 style="color: #F44336;">2FA</h2>
-				<span>Code 2FA sudah kami kirim ke Email anda. <a href="#">Apa itu 2FA?</a></span>
+				<span>Code 2FA sudah kami kirim ke Email anda. <sup><a href="https://nyanhash.web.id/faq.html">Apa itu 2FA?</a></sup></span>
 				<br><br><br>
 				<div class="form-group">
 					<input type="number" ng-model="user.token" required placeholder="Token">
@@ -160,6 +163,6 @@
 	<script async src='https://www.google.com/recaptcha/api.js'></script>
 	<script async src="/plugins/toastr/toastr.min.js"></script>
 	<script async src="/plugins/cryptojs/crypto.js"></script>
-	<script src="/static/js/app.module.js?v=v1.1.0"></script>
+	<script src="/static/js/app.module.js?v=v1.1.4"></script>
 </body>
 </html>
